@@ -19,9 +19,12 @@ var isPrime = function(num) {
 var max = 0;
 var factors = [];
 
+// do not need to go farther than sqrt(n), if n is divisible by p,
+// then n = p x q and if q were smaller than p, q would have already
+// been detected.
 for (var i = 0; i < Math.pow(input, 0.5); i++) {
-    if (isPrime(i)) {
-        if (input % i === 0) {
+    if (input % i === 0) {
+        if (isPrime(i)) {
             factors.push(i);
             if (i > max) {
                 max = i;
@@ -29,6 +32,7 @@ for (var i = 0; i < Math.pow(input, 0.5); i++) {
         }
     }
 }
+
 console.log("Solution:", 6857);
 console.log(max);
 console.log(factors);
