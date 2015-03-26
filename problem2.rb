@@ -10,20 +10,16 @@
 #
 # Solution: 4613732
 
-a = 0
-b = 1
-c = 0
+a = 1
+b = 0
 sum = 0
-
 input = 4000000
 
-while c < input do
-  if c % 2 == 0
-    sum += c
-  end
-  c = a + b
-  a = b
-  b = c
+while b < input do
+  c = a
+  a = b 
+  b += c
+  sum += b if b % 2 == 0
 end
 
 puts "Solution:", 4613732

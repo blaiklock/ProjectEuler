@@ -9,11 +9,7 @@
 input = 1000
 sum = 0
 
-for i in 0...input do
-	if i % 3 == 0 or i % 5 == 0
-    sum += i
-	end
-end
+input.times {|i| sum += i if (i % 3 == 0) or (i % 5 == 0)}
 
 puts "Solution:", 233168
 puts sum
